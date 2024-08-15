@@ -9,12 +9,13 @@ class Sayac extends Component {
     };
   }
 
-  componentDidUpdate() {
-    console.log("didUpdate çalışstı");
+  componentDidMount() {
+    console.log("didMount çalıştı");
   }
 
-  componentDidMount() {}
-
+  componentWillUnmount() {
+    console.log("ClassComponent ekrandan gitti");
+  }
 
   changeCount = (changeType) => {
     if (changeType === "arttir") {
@@ -27,9 +28,9 @@ class Sayac extends Component {
   render() {
     return (
       <div>
-        <button onClick={() => this.changeCount('arttir')}>ARTTIR</button>
+        <button onClick={() => this.changeCount("arttir")}>ARTTIR</button>
         <p>{this.state.count}</p>
-        <button onClick={() => this.changeCount('azalt')}>AZALT</button>
+        <button onClick={() => this.changeCount("azalt")}>AZALT</button>
       </div>
     );
   }
